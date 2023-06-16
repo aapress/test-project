@@ -116,3 +116,13 @@ $ cat refs/heads/master
 -   Команда `git status` всегда подскажет, что происходит с файлом: например, он добавлен в список «на коммит» или ещё вообще не отслеживается, или изменён.
 -   `git status` показывает явно следующие состояния файлов: `untracked`, `staged` и `modified`.
 -   `git status` подсказывает, какие команды можно выполнить, чтобы поменять состояние файла.
+
+```mermaid
+ graph LR;
+     untracked -- "git add" -->staged;
+     staged -- "git commit"-->tracked;
+     staged -- "changes" -->modifiend;
+     modifiend -- "git add" -->staged;
+     tracked -- "changes" -->modifiend;
+```
+
